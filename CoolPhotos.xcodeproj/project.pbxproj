@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6552DB361D4B3596001DB5BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552DB351D4B3596001DB5BD /* AppDelegate.swift */; };
+		6552DB381D4B3596001DB5BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552DB371D4B3596001DB5BD /* ViewController.swift */; };
+		6552DB3B1D4B3596001DB5BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6552DB391D4B3596001DB5BD /* Main.storyboard */; };
+		6552DB3D1D4B3596001DB5BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6552DB3C1D4B3596001DB5BD /* Assets.xcassets */; };
+		6552DB401D4B3596001DB5BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6552DB3E1D4B3596001DB5BD /* LaunchScreen.storyboard */; };
+		6552DB4B1D4B3596001DB5BD /* CoolPhotosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552DB4A1D4B3596001DB5BD /* CoolPhotosTests.swift */; };
+		6552DB561D4B3596001DB5BD /* CoolPhotosUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6552DB551D4B3596001DB5BD /* CoolPhotosUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6552DB471D4B3596001DB5BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6552DB2A1D4B3596001DB5BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6552DB311D4B3596001DB5BD;
+			remoteInfo = CoolPhotos;
+		};
+		6552DB521D4B3596001DB5BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6552DB2A1D4B3596001DB5BD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6552DB311D4B3596001DB5BD;
+			remoteInfo = CoolPhotos;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6552DB321D4B3596001DB5BD /* CoolPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoolPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6552DB351D4B3596001DB5BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6552DB371D4B3596001DB5BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6552DB3A1D4B3596001DB5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6552DB3C1D4B3596001DB5BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6552DB3F1D4B3596001DB5BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6552DB411D4B3596001DB5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6552DB461D4B3596001DB5BD /* CoolPhotosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolPhotosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6552DB4A1D4B3596001DB5BD /* CoolPhotosTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolPhotosTests.swift; sourceTree = "<group>"; };
+		6552DB4C1D4B3596001DB5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6552DB511D4B3596001DB5BD /* CoolPhotosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoolPhotosUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6552DB551D4B3596001DB5BD /* CoolPhotosUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoolPhotosUITests.swift; sourceTree = "<group>"; };
+		6552DB571D4B3596001DB5BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6552DB2F1D4B3596001DB5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB431D4B3596001DB5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB4E1D4B3596001DB5BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6552DB291D4B3596001DB5BD = {
+			isa = PBXGroup;
+			children = (
+				6552DB341D4B3596001DB5BD /* CoolPhotos */,
+				6552DB491D4B3596001DB5BD /* CoolPhotosTests */,
+				6552DB541D4B3596001DB5BD /* CoolPhotosUITests */,
+				6552DB331D4B3596001DB5BD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6552DB331D4B3596001DB5BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6552DB321D4B3596001DB5BD /* CoolPhotos.app */,
+				6552DB461D4B3596001DB5BD /* CoolPhotosTests.xctest */,
+				6552DB511D4B3596001DB5BD /* CoolPhotosUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6552DB341D4B3596001DB5BD /* CoolPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				6552DB351D4B3596001DB5BD /* AppDelegate.swift */,
+				6552DB371D4B3596001DB5BD /* ViewController.swift */,
+				6552DB391D4B3596001DB5BD /* Main.storyboard */,
+				6552DB3C1D4B3596001DB5BD /* Assets.xcassets */,
+				6552DB3E1D4B3596001DB5BD /* LaunchScreen.storyboard */,
+				6552DB411D4B3596001DB5BD /* Info.plist */,
+			);
+			path = CoolPhotos;
+			sourceTree = "<group>";
+		};
+		6552DB491D4B3596001DB5BD /* CoolPhotosTests */ = {
+			isa = PBXGroup;
+			children = (
+				6552DB4A1D4B3596001DB5BD /* CoolPhotosTests.swift */,
+				6552DB4C1D4B3596001DB5BD /* Info.plist */,
+			);
+			path = CoolPhotosTests;
+			sourceTree = "<group>";
+		};
+		6552DB541D4B3596001DB5BD /* CoolPhotosUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6552DB551D4B3596001DB5BD /* CoolPhotosUITests.swift */,
+				6552DB571D4B3596001DB5BD /* Info.plist */,
+			);
+			path = CoolPhotosUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6552DB311D4B3596001DB5BD /* CoolPhotos */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6552DB5A1D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotos" */;
+			buildPhases = (
+				6552DB2E1D4B3596001DB5BD /* Sources */,
+				6552DB2F1D4B3596001DB5BD /* Frameworks */,
+				6552DB301D4B3596001DB5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoolPhotos;
+			productName = CoolPhotos;
+			productReference = 6552DB321D4B3596001DB5BD /* CoolPhotos.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6552DB451D4B3596001DB5BD /* CoolPhotosTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6552DB5D1D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotosTests" */;
+			buildPhases = (
+				6552DB421D4B3596001DB5BD /* Sources */,
+				6552DB431D4B3596001DB5BD /* Frameworks */,
+				6552DB441D4B3596001DB5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6552DB481D4B3596001DB5BD /* PBXTargetDependency */,
+			);
+			name = CoolPhotosTests;
+			productName = CoolPhotosTests;
+			productReference = 6552DB461D4B3596001DB5BD /* CoolPhotosTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6552DB501D4B3596001DB5BD /* CoolPhotosUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6552DB601D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotosUITests" */;
+			buildPhases = (
+				6552DB4D1D4B3596001DB5BD /* Sources */,
+				6552DB4E1D4B3596001DB5BD /* Frameworks */,
+				6552DB4F1D4B3596001DB5BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6552DB531D4B3596001DB5BD /* PBXTargetDependency */,
+			);
+			name = CoolPhotosUITests;
+			productName = CoolPhotosUITests;
+			productReference = 6552DB511D4B3596001DB5BD /* CoolPhotosUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6552DB2A1D4B3596001DB5BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = DYH;
+				TargetAttributes = {
+					6552DB311D4B3596001DB5BD = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					6552DB451D4B3596001DB5BD = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 6552DB311D4B3596001DB5BD;
+					};
+					6552DB501D4B3596001DB5BD = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = 6552DB311D4B3596001DB5BD;
+					};
+				};
+			};
+			buildConfigurationList = 6552DB2D1D4B3596001DB5BD /* Build configuration list for PBXProject "CoolPhotos" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6552DB291D4B3596001DB5BD;
+			productRefGroup = 6552DB331D4B3596001DB5BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6552DB311D4B3596001DB5BD /* CoolPhotos */,
+				6552DB451D4B3596001DB5BD /* CoolPhotosTests */,
+				6552DB501D4B3596001DB5BD /* CoolPhotosUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6552DB301D4B3596001DB5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6552DB401D4B3596001DB5BD /* LaunchScreen.storyboard in Resources */,
+				6552DB3D1D4B3596001DB5BD /* Assets.xcassets in Resources */,
+				6552DB3B1D4B3596001DB5BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB441D4B3596001DB5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB4F1D4B3596001DB5BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6552DB2E1D4B3596001DB5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6552DB381D4B3596001DB5BD /* ViewController.swift in Sources */,
+				6552DB361D4B3596001DB5BD /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB421D4B3596001DB5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6552DB4B1D4B3596001DB5BD /* CoolPhotosTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6552DB4D1D4B3596001DB5BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6552DB561D4B3596001DB5BD /* CoolPhotosUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6552DB481D4B3596001DB5BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6552DB311D4B3596001DB5BD /* CoolPhotos */;
+			targetProxy = 6552DB471D4B3596001DB5BD /* PBXContainerItemProxy */;
+		};
+		6552DB531D4B3596001DB5BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6552DB311D4B3596001DB5BD /* CoolPhotos */;
+			targetProxy = 6552DB521D4B3596001DB5BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6552DB391D4B3596001DB5BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6552DB3A1D4B3596001DB5BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6552DB3E1D4B3596001DB5BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6552DB3F1D4B3596001DB5BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6552DB581D4B3596001DB5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6552DB591D4B3596001DB5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6552DB5B1D4B3596001DB5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoolPhotos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		6552DB5C1D4B3596001DB5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoolPhotos/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotos;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		6552DB5E1D4B3596001DB5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoolPhotosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolPhotos.app/CoolPhotos";
+			};
+			name = Debug;
+		};
+		6552DB5F1D4B3596001DB5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CoolPhotosTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotosTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoolPhotos.app/CoolPhotos";
+			};
+			name = Release;
+		};
+		6552DB611D4B3596001DB5BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoolPhotosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoolPhotos;
+			};
+			name = Debug;
+		};
+		6552DB621D4B3596001DB5BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = CoolPhotosUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.dyh.CoolPhotosUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = CoolPhotos;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6552DB2D1D4B3596001DB5BD /* Build configuration list for PBXProject "CoolPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6552DB581D4B3596001DB5BD /* Debug */,
+				6552DB591D4B3596001DB5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6552DB5A1D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotos" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6552DB5B1D4B3596001DB5BD /* Debug */,
+				6552DB5C1D4B3596001DB5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6552DB5D1D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotosTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6552DB5E1D4B3596001DB5BD /* Debug */,
+				6552DB5F1D4B3596001DB5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6552DB601D4B3596001DB5BD /* Build configuration list for PBXNativeTarget "CoolPhotosUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6552DB611D4B3596001DB5BD /* Debug */,
+				6552DB621D4B3596001DB5BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6552DB2A1D4B3596001DB5BD /* Project object */;
+}
