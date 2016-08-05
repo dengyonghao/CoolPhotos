@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        initHomePage()
         return true
     }
 
@@ -38,6 +39,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
        
     }
 
+    func initHomePage() {
+        let homePage = CPHomePageViewController.init();
+        let nav = UINavigationController.init(rootViewController: homePage)
+        self.window = UIWindow.init(frame: UIScreen.mainScreen().bounds)
+        self.window?.rootViewController?.view.backgroundColor = UIColor.whiteColor()
+        self.window?.rootViewController = nav
+        self.window?.makeKeyWindow()
+    }
 
 }
 

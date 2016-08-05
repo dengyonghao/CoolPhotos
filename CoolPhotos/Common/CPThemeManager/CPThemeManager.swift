@@ -22,13 +22,11 @@ class CPThemeManager: NSObject {
     
     var themeStyle: CPThemeType?
     var themeBundle: NSBundle?
-    var themeColors: Dictionary<String,String>?
+    var themeColors: Dictionary<String,AnyObject>?
     
     // MARK: 单例
     static let shareInstance = CPThemeManager()
-    private override init() {
-        
-    }
+    private override init() {}
     
     // MARK: 设置皮肤
     func setThemeStyle(themeStyle: CPThemeType) {
@@ -63,12 +61,42 @@ class CPThemeManager: NSObject {
         NSNotificationCenter.defaultCenter().postNotificationName("BTThemeChangeNotification", object: nil)
     }
 
-    func addThemeListener(object: AnyObject) {
-        
+    func addThemeListener(object: CPBaseViewController) {
+        NSNotificationCenter.defaultCenter().addObserver(object, selector:#selector(object.CPThemeDidNeedUpdateStyle), name: "BTThemeChangeNotification", object: nil)
     }
     
     func removeThemeListener(object: AnyObject) {
         NSNotificationCenter.defaultCenter().removeObserver(object)
+    }
+    
+    func CPThemeImage(imageName: String, completionHandler: (image: UIImage) -> Void) {
+        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
+            let imagePath = "image/" + imageName
+            var image: UIImage?
+            image = UIImage.loadImage(imagePath, fromBundle: self.themeBundle!)
+            
+            if image == nil && self.themeStyle == .CPThemeType_BT_BLACK {
+                let themeBundlePath = NSBundle.pathForResource("blueTheme", ofType: "bundle", inDirectory: NSBundle.mainBundle().bundlePath)
+                self.themeBundle = NSBundle.init(path: themeBundlePath!)
+                 image = UIImage.loadImage(imagePath, fromBundle: self.themeBundle!)
+            }
+            if image == nil {
+                image = UIImage.init(named: imageName)
+            }
+            dispatch_async(dispatch_get_main_queue(), { 
+                completionHandler(image: image!)
+            })
+        }
+    }
+    
+    func CPThemeColor(colorKey: String) -> UIColor {
+        let jsonValue = self.themeColors?.stringValueForKey(colorKey, defaultValue: "0xffffffff",
+                                                            operation: .NSStringOperationTypeNone)
+        if jsonValue == nil {
+            return UIColor.blackColor()
+        }
+        let colorValue = strtoul(jsonValue!, nil, 16)
+        return UIColor.colorAWithHex(colorValue)
     }
 
 }

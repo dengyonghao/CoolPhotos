@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
-            timestampString = "491478712.706987"
+            filePath = "CoolPhotos/ViewController.swift"
+            timestampString = "491732551.014295"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setThemeStyle(_:)"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,13 +26,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
-            timestampString = "491478712.706987"
+            timestampString = "491904757.127954"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "setThemeStyle(_:)"
-            landmarkType = "5">
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "CPThemeManager"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "globalinit_33_572AF5D61A34F15B8CC0430FC0A14769_func0"
+                  moduleName = "CoolPhotos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dengyonghao/Desktop/Swift/CoolPhotos/CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
+                  timestampString = "491904802.787945"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static CoolPhotos.CPThemeManager.shareInstance.getter : CoolPhotos.CPThemeManager"
+                  moduleName = "CoolPhotos"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/dengyonghao/Desktop/Swift/CoolPhotos/CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
+                  timestampString = "491904802.788357"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -41,29 +73,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
-            timestampString = "491478909.778296"
+            filePath = "CoolPhotos/Src/HomePageModule/ViewController/CPHomePageViewController.swift"
+            timestampString = "491904775.632742"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
-            landmarkName = "setThemeStyle(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CoolPhotos/Common/CPThemeManager/CPThemeManager.swift"
-            timestampString = "491479017.871124"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "setThemeStyle(_:)"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
