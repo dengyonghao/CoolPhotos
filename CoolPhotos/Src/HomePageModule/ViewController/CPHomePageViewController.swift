@@ -16,6 +16,8 @@ class CPHomePageViewController: CPBaseViewController {
         self.navigationController?.navigationBarHidden = true
         let rectStatus = UIApplication.sharedApplication().statusBarFrame
         print(rectStatus)
+        self.view.backgroundColor = CPThemeManager.shareInstance.CPThemeColor("cp_press_c")
+        
     }
 
     override func didReceiveMemoryWarning() {

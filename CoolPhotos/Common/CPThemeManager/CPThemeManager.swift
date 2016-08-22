@@ -8,10 +8,10 @@
 
 import UIKit
 
-enum CPThemeType: Int {
-    case CPThemeType_BT_BLUE = 1
-    case CPThemeType_BT_BLACK = 2
-    case CPThemeType_ONLINE = 3
+enum CPThemeType {
+    case CPThemeType_BT_BLUE
+    case CPThemeType_BT_BLACK
+    case CPThemeType_ONLINE
 }
 
 protocol CPThemeListenerProtocol {
@@ -20,10 +20,10 @@ protocol CPThemeListenerProtocol {
 
 class CPThemeManager: NSObject {
     
-    var themeStyle: CPThemeType?
-    var themeBundle: NSBundle?
-    var themeColors: Dictionary<String,AnyObject>?
-    
+    private var themeStyle: CPThemeType?
+    private var themeBundle: NSBundle?
+    private var themeColors: Dictionary<String, AnyObject>?
+
     // MARK: 单例
     static let shareInstance = CPThemeManager()
     private override init() {}
@@ -34,7 +34,7 @@ class CPThemeManager: NSObject {
             return;
         }
         self.themeStyle = themeStyle;
-        NSUserDefaults.standardUserDefaults().setValue(themeStyle.rawValue, forKey: "kCPThemeStyle")
+        NSUserDefaults.standardUserDefaults().setValue(themeStyle.hashValue, forKey: "kCPThemeStyle")
         
         var bundleName: String = String()
         if themeStyle == .CPThemeType_BT_BLACK {
@@ -58,11 +58,14 @@ class CPThemeManager: NSObject {
         } catch let error as NSError {
             print(error)
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("BTThemeChangeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("CPThemeChangeNotification", object: nil)
     }
 
     func addThemeListener(object: CPBaseViewController) {
-        NSNotificationCenter.defaultCenter().addObserver(object, selector:#selector(object.CPThemeDidNeedUpdateStyle), name: "BTThemeChangeNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(object,
+                                                         selector:#selector(object.CPThemeDidNeedUpdateStyle),
+                                                         name: "CPThemeChangeNotification",
+                                                         object: nil)
     }
     
     func removeThemeListener(object: AnyObject) {
@@ -90,7 +93,7 @@ class CPThemeManager: NSObject {
     }
     
     func CPThemeColor(colorKey: String) -> UIColor {
-        let jsonValue = self.themeColors?.stringValueForKey(colorKey, defaultValue: "0xffffffff",
+        let jsonValue = themeColors?.stringValueForKey(colorKey, defaultValue: "0xffffffff",
                                                             operation: .NSStringOperationTypeNone)
         if jsonValue == nil {
             return UIColor.blackColor()

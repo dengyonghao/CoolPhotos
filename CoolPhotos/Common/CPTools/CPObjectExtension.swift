@@ -8,10 +8,10 @@
 
 import UIKit
 
-enum CPStringOperationType: Int {
-    case NSStringOperationTypeNone = 0                   // 无需额外操作
-    case NSStringOperationTypeTrim = 1                   // 去空
-    case NSStringOperationTypeDecodeUnicode = 2          // 解汉字
+enum CPStringOperationType {
+    case NSStringOperationTypeNone                  // 无需额外操作
+    case NSStringOperationTypeTrim                  // 去空
+    case NSStringOperationTypeDecodeUnicode         // 解汉字
 }
 
 class CPObjectExtension: NSObject {

@@ -8,15 +8,26 @@
 
 import UIKit
 
-class CPBaseViewController: UIViewController {
+class CPBaseViewController: UIViewController, CPThemeListenerProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.whiteColor()
+        //默认背景
+        let backgroungView = UIImageView.init(frame: self.view.frame)
+        self.view.addSubview(backgroungView)
+//        CPThemeManager.shareInstance.CPThemeImage("com_bg_journal01_1242x2208", completionHandler: { (image) in
+//            backgroungView.image = image
+//        })
+        //添加皮肤监听
+        CPThemeManager.shareInstance.addThemeListener(self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    deinit {
+        CPThemeManager.shareInstance.removeThemeListener(self)
     }
     
     // MARK: - 监听皮肤切换

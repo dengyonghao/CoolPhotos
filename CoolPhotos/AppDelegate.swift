@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        initTheme()
         initHomePage()
         return true
     }
@@ -46,6 +47,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window?.rootViewController?.view.backgroundColor = UIColor.whiteColor()
         self.window?.rootViewController = nav
         self.window?.makeKeyWindow()
+    }
+
+    func initTheme() {
+        CPThemeManager.shareInstance.setThemeStyle(.CPThemeType_BT_BLACK)
     }
 
 }
