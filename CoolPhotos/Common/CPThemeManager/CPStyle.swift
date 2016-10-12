@@ -13,26 +13,27 @@ class CPStyle: NSObject {
 }
 
 extension UIImage {
-    static func loadImage(imageName: String, fromBundle: NSBundle) -> UIImage {
+    static func loadImage(imageName: String, fromBundle: Bundle) -> UIImage {
         var image = UIImage()
         var isImageUnder3x = false
         if imageName.characters.count > 0 {
-            var nameAndType: [String] = imageName.componentsSeparatedByString(".")
+            var nameAndType = imageName.components(separatedBy: ".")
             var name: String!
             name = nameAndType.first
             let type = nameAndType.count > 1 ? nameAndType[1] : "png"
             var imagePath: String?
-            imagePath  =  fromBundle.pathForResource(name, ofType: type)
+            imagePath  =  fromBundle.path(forResource: name, ofType: type)
             let nameLength = name.characters.count
             if imagePath == nil && (name?.hasSuffix("@2x"))! && nameLength > 3 {
-                name = name.substringWithRange(Range<String.Index>(name.startIndex ..< name.endIndex.advancedBy(-3)))
+                let index = name.index(name.endIndex, offsetBy: -3)
+                name = name.substring(with: Range<String.Index>(name.startIndex ..< index))
             }
             if imagePath == nil && !name.hasSuffix("@2x") {
                 let name2x = name + "@2x";
-                imagePath = fromBundle.pathForResource(name2x, ofType: type)
+                imagePath = fromBundle.path(forResource: name2x, ofType: type)
                 if imagePath == nil && !name.hasSuffix("3x") {
                     let name3x = name + "@3x"
-                    imagePath = fromBundle.pathForResource(name3x, ofType: type)
+                    imagePath = fromBundle.path(forResource: name3x, ofType: type)
                     isImageUnder3x = true
                 }
             }
@@ -40,27 +41,28 @@ extension UIImage {
                 image = UIImage.init(contentsOfFile: imagePath!)!
             }
         }
-        let device = Float(UIDevice.currentDevice().systemVersion)
-        if device > 8.0 || !isImageUnder3x {
+        if #available(iOS 8, *) {
             return image
-        } else {
-            return image.scaledImageFrom3x()
         }
+        if !isImageUnder3x {
+            return image
+        }
+        return image.scaledImageFrom3x()
     }
     
     private func scaledImageFrom3x() -> UIImage {
-        let locScale = UIScreen.mainScreen().scale
+        let locScale = UIScreen.main.scale
         let theRate: CGFloat = 1.0 / 3.0
         let oldSize = self.size
         let scaleWidth = CGFloat(oldSize.width) * theRate
         let scaleHeight = CGFloat(oldSize.height) * theRate
-        var scaleRect = CGRectZero
+        var scaleRect = CGRect.zero
         scaleRect.size.width = scaleWidth
         scaleRect.size.height = scaleHeight
         UIGraphicsBeginImageContextWithOptions(scaleRect.size, false, locScale)
-        drawInRect(scaleRect)
+        draw(in: scaleRect)
         var newImage = UIImage()
-        newImage = UIGraphicsGetImageFromCurrentImageContext()
+        newImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         return newImage
     }

@@ -12,11 +12,11 @@ class CPHomePageViewController: CPBaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        CPThemeManager.shareInstance
-        self.navigationController?.navigationBarHidden = true
-        let rectStatus = UIApplication.sharedApplication().statusBarFrame
+        let themeManager = CPThemeManager.shareInstance
+        self.navigationController?.isNavigationBarHidden = true
+        let rectStatus = UIApplication.shared.statusBarFrame
         print(rectStatus)
-        self.view.backgroundColor = CPThemeManager.shareInstance.CPThemeColor("cp_press_c")
+        self.view.backgroundColor = themeManager.CPThemeColor(colorKey: "cp_press_c")
         
     }
 

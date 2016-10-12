@@ -20,23 +20,23 @@ class CPObjectExtension: NSObject {
 
 extension String {
     func trim() -> String {
-        return self.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        return self.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines)
     }
     
     func decodeUnicode() -> String {
-        let str1 = self.stringByReplacingOccurrencesOfString("\\u", withString: "\\U")
-        let str2 = str1.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+        let str1 = self.replacingOccurrences(of: "\\u", with: "\\u")
+        let str2 = str1.replacingOccurrences(of: "\"", with: "\\\"")
         let str3 = "\"" + str2 + "\""
         var str4: String?
         do {
-            str4 = try NSPropertyListSerialization.propertyListWithData(str3.dataUsingEncoding(NSUTF8StringEncoding)!,
-                                                                        options: NSPropertyListMutabilityOptions.MutableContainersAndLeaves,
+            str4 = try PropertyListSerialization.propertyList(from: str3.data(using: String.Encoding.utf8)!,
+                                                                        options: PropertyListSerialization.MutabilityOptions.mutableContainersAndLeaves,
                                                                         format: nil) as? String
         } catch {
         
         }
         
-        return str4!.stringByReplacingOccurrencesOfString("\\r\\n", withString: "\n")
+        return str4!.replacingOccurrences(of: "\\r\\n", with: "\n")
     }
     
     func stringToPinYin() -> String {
@@ -63,17 +63,18 @@ extension String {
 //        range转换的范围，nil代表全部转换。reverse是否必须是可逆向转换
         CFStringTransform(ms, nil, kCFStringTransformMandarinLatin, false)
         CFStringTransform(ms, nil, kCFStringTransformStripDiacritics, false)
+        return ms as String;
     }
 }
 
 
-extension Dictionary where Key: StringLiteralConvertible, Value: AnyObject{
+extension Dictionary where Key: ExpressibleByStringLiteral, Value: AnyObject{
     
     var jsonString: String? {
         if let dict = (self as? AnyObject) as? Dictionary<String, AnyObject> {
             do {
-                let data = try NSJSONSerialization.dataWithJSONObject(dict, options: NSJSONWritingOptions(rawValue: UInt.allZeros))
-                if let string = String(data: data, encoding: NSUTF8StringEncoding) {
+                let data = try JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions(rawValue: UInt.allZeros))
+                if let string = String(data: data, encoding: String.Encoding.utf8) {
                     return string
                 }
             } catch {

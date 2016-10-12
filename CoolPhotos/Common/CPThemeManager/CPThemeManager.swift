@@ -21,7 +21,7 @@ protocol CPThemeListenerProtocol {
 class CPThemeManager: NSObject {
     
     private var themeStyle: CPThemeType?
-    private var themeBundle: NSBundle?
+    private var themeBundle: Bundle?
     private var themeColors: Dictionary<String, AnyObject>?
 
     // MARK: 单例
@@ -34,7 +34,7 @@ class CPThemeManager: NSObject {
             return;
         }
         self.themeStyle = themeStyle;
-        NSUserDefaults.standardUserDefaults().setValue(themeStyle.hashValue, forKey: "kCPThemeStyle")
+        UserDefaults.standard.setValue(themeStyle.hashValue, forKey: "kCPThemeStyle")
         
         var bundleName: String = String()
         if themeStyle == .CPThemeType_BT_BLACK {
@@ -46,60 +46,60 @@ class CPThemeManager: NSObject {
             return
         }
         
-        let themeBundlePath = NSBundle.pathForResource(bundleName, ofType: "bundle", inDirectory: NSBundle.mainBundle().bundlePath)
-        self.themeBundle = NSBundle.init(path: themeBundlePath!)
+        let themeBundlePath = Bundle.path(forResource: bundleName, ofType: "bundle", inDirectory: Bundle.main.bundlePath)
+        self.themeBundle = Bundle.init(path: themeBundlePath!)
         
-        let path = self.themeBundle?.pathForResource("ThemeColor", ofType: "txt")
+        let path = self.themeBundle?.path(forResource: "ThemeColor", ofType: "txt")
         
         let data: NSData = NSData.init(contentsOfFile: path!)!
         
         do {
-            self.themeColors = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers) as? Dictionary<String, String>
+            self.themeColors = try JSONSerialization.jsonObject(with: data as Data, options: .mutableContainers) as? Dictionary<String, String> as Dictionary<String, AnyObject>?
         } catch let error as NSError {
             print(error)
         }
-        NSNotificationCenter.defaultCenter().postNotificationName("CPThemeChangeNotification", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "CPThemeChangeNotification"), object: nil)
     }
 
     func addThemeListener(object: CPBaseViewController) {
-        NSNotificationCenter.defaultCenter().addObserver(object,
+        NotificationCenter.default.addObserver(object,
                                                          selector:#selector(object.CPThemeDidNeedUpdateStyle),
-                                                         name: "CPThemeChangeNotification",
+                                                         name: NSNotification.Name(rawValue: "CPThemeChangeNotification"),
                                                          object: nil)
     }
     
     func removeThemeListener(object: AnyObject) {
-        NSNotificationCenter.defaultCenter().removeObserver(object)
+        NotificationCenter.default.removeObserver(object)
     }
     
-    func CPThemeImage(imageName: String, completionHandler: (image: UIImage) -> Void) {
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) { 
+    func CPThemeImage(imageName: String, completionHandler: @escaping (_ image: UIImage) -> Void) {
+        DispatchQueue.global().async {
             let imagePath = "image/" + imageName
             var image: UIImage?
-            image = UIImage.loadImage(imagePath, fromBundle: self.themeBundle!)
+            image = UIImage.loadImage(imageName: imagePath, fromBundle: self.themeBundle!)
             
             if image == nil && self.themeStyle == .CPThemeType_BT_BLACK {
-                let themeBundlePath = NSBundle.pathForResource("blueTheme", ofType: "bundle", inDirectory: NSBundle.mainBundle().bundlePath)
-                self.themeBundle = NSBundle.init(path: themeBundlePath!)
-                 image = UIImage.loadImage(imagePath, fromBundle: self.themeBundle!)
+                let themeBundlePath = Bundle.path(forResource: "blueTheme", ofType: "bundle", inDirectory: Bundle.main.bundlePath)
+                self.themeBundle = Bundle.init(path: themeBundlePath!)
+                image = UIImage.loadImage(imageName: imagePath, fromBundle: self.themeBundle!)
             }
             if image == nil {
                 image = UIImage.init(named: imageName)
             }
-            dispatch_async(dispatch_get_main_queue(), { 
-                completionHandler(image: image!)
-            })
+            DispatchQueue.main.sync {
+               completionHandler(image!)
+            }
         }
     }
     
     func CPThemeColor(colorKey: String) -> UIColor {
-        let jsonValue = themeColors?.stringValueForKey(colorKey, defaultValue: "0xffffffff",
+        let jsonValue = themeColors?.stringValueForKey(key: colorKey, defaultValue: "0xffffffff",
                                                             operation: .NSStringOperationTypeNone)
         if jsonValue == nil {
-            return UIColor.blackColor()
+            return UIColor.black
         }
         let colorValue = strtoul(jsonValue!, nil, 16)
-        return UIColor.colorAWithHex(colorValue)
+        return UIColor.colorAWithHex(hex: colorValue)
     }
 
 }

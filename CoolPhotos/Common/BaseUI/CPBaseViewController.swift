@@ -19,7 +19,7 @@ class CPBaseViewController: UIViewController, CPThemeListenerProtocol {
 //            backgroungView.image = image
 //        })
         //添加皮肤监听
-        CPThemeManager.shareInstance.addThemeListener(self)
+        CPThemeManager.shareInstance.addThemeListener(object: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,7 +27,7 @@ class CPBaseViewController: UIViewController, CPThemeListenerProtocol {
     }
 
     deinit {
-        CPThemeManager.shareInstance.removeThemeListener(self)
+        CPThemeManager.shareInstance.removeThemeListener(object: self)
     }
     
     // MARK: - 监听皮肤切换
